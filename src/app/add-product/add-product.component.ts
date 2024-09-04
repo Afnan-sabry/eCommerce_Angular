@@ -8,13 +8,14 @@ import { Product } from '../models/product';
 })
 export class AddProductComponent {
   model:Product={
+    id:0,
     name:'',
     description:'',
-    image:'',
+    imageUrl:'',
     price:0
   };
   @Output() newProductCreated=new EventEmitter<Product>();
-
+ 
   onSaveProduct(){
     this.newProductCreated.emit(this.model);
   }
